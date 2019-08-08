@@ -160,6 +160,8 @@ public:
   void write(int value, uint8_t speed, bool wait); // wait parameter causes call to block until move completes
   void writeMicroseconds(int value); // Write pulse width in microseconds 
   void slowmove(int value, uint8_t speed);
+  void move_gauss(int theta); //moves the servo to position theta, and varies the velocity as a Gaussian.
+			      //mean of the Gaussian is the mid point and the amplitude is the max speed of the servo (255)
   void stop(); // stop the servo where it is
   
   int read();                        // returns current pulse width as an angle between 0 and 180 degrees
